@@ -100,9 +100,12 @@ class ArtikelController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function delete($id)
 	{
-		//
+		$data = artikel::find($id);
+		$data->delete();
+		Session::flash('success', 'Successfully Delete Book');
+		return Redirect::to('dashboard')->with('message', 'Success');
 	}
 
 

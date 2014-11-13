@@ -28,16 +28,11 @@ Route::get('create', function()
 	// endif;
 });
 
-Route::get('edit/{id}', 'ArtikelController@edit');
+Route::get('edit/{id}','ArtikelController@edit');
 
 Route::post('store','ArtikelController@store');
-Route::post('artikel/delete/{id}','ArtikelController@delete');
+Route::get('delete/{id}','ArtikelController@delete');
 Route::post('artikel/update', 'ArtikelController@update');
-
-
-
-
-
 Route::get('artikel/{name}', function($name=null)
 {
 	return View::make('artikel');
